@@ -1,5 +1,3 @@
-// External Imports
-
 // Internal Imports
 import { Heading1, Heading2Link, BodyText } from "./components/textComponents";
 import MainDiv from "./components/mainDiv";
@@ -8,7 +6,7 @@ import HiMyNameIs from "./components/hiMyNameIs";
 export default function Home() {
   return (
     <MainDiv>
-      <div className="">
+      <div>
         <HiMyNameIs />
         <Heading1 text="Will Etheridge" />
         <BodyText text="Developer / Designer / Marketer" />

@@ -1,5 +1,3 @@
-// External Imports
-
 // Internal Imports
 import MainDiv from "../components/mainDiv";
 import { HeadingBlock } from "../components/workAndBlogComponents";
