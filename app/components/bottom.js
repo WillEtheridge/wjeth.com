@@ -1,7 +1,7 @@
 // External Imports
 import Image from "next/image";
 
-const BottomImage = (src, alt) => {
+const BottomImage = ({ src, alt }) => {
   return (
     <Image
       src={src}
