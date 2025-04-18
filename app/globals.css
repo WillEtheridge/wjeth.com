@@ -1,26 +1,45 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-cOrange: #ff9e64;
+  --color-cGreen: #73daca;
+  --color-cGreen2: #b4f9f8;
+  --color-cWhite: #fafafb;
+  --color-cBlue: #7dcfff;
+  --color-cRed: #f7768e;
+  --color-cPurple: #bb9af7;
+  --color-cBlue2: #7aa2f7;
+  --color-cBg: #24283b;
+  --color-cBg2: #414868;
+  --color-cLine: #9aa5ce;
+  --text-h1: 101px;
+  --text-h1Tablet: 67px;
+  --text-h1Mobile: 54px;
+  --text-h2: 76px;
+  --text-h2Tablet: 55px;
+  --text-h2Mobile: 45px;
+  --text-h3: 57px;
+  --text-h3Tablet: 44px;
+  --text-h3Mobile: 37px;
+  --text-h4: 43px;
+  --text-h4Tablet: 35px;
+  --text-h4Mobile: 31px;
+  --text-h5: 32px;
+  --text-h5Tablet: 28px;
+  --text-h5Mobile: 26px;
+  --text-h6: 24px;
+  --text-h6Tablet: 22px;
+  --text-h6Mobile: 22px;
+  --text-body: 18px;
+  --text-smallBody: 14px;
+  --marquee-duration: 60s;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  100% {
+    transform: translateX(-50%);
+  }
 }
