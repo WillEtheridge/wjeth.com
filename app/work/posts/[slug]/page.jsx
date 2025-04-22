@@ -7,10 +7,12 @@ export async function generateStaticParams() {
   return getPostSlugs(contentType).map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params: { slug } }) {
+export async function generateMetadata(props) {
+  const { slug } = await props.params;
   return generatePostMetadata(contentType, slug);
 }
 
-export default async function WorkPost({ params: { slug } }) {
-  return <PostPage contentType={contentType} slug={slug} />;
+export default async function WorkPost(props) {
+  const { slug } = await props.params;
+  return <PostPage contentType="work" slug={slug} />;
 }
