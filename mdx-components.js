@@ -6,6 +6,7 @@ import {
   Heading5,
   Heading6,
   BodyText,
+  BodyLink,
   BoldBodyText,
 } from "./app/components/textComponents";
 
@@ -19,8 +20,7 @@ export function useMDXComponents(components) {
     h6: ({ children }) => <Heading6 text={children} />,
     p: ({ children }) => <BodyText text={children} />,
     li: ({ children }) => <BodyText text={"- " + children} />,
-    ul: ({ children }) => <BodyText text={"- " + children} />,
-    ol: ({ children }) => <BodyText text={"- " + children} />,
+    a: ({ href, children }) => <BodyLink href={href} children={children} />,
     strong: ({ children }) => <BoldBodyText text={children} />,
 
     ...components,

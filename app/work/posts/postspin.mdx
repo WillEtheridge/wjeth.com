@@ -9,73 +9,96 @@ keywords: ["AI", "Social Media", "Automated Content Creation"]
 
 # PostSpin
 
-#### AI generated carousel posts for social media
+##### AI generated carousel posts for social media
 
 ### TLDR
 
-A quick summary of:
+PostSpin is a web based Saas tool that helps users create highly engaging social media carousel posts using AI.
 
-- What the project is
-- What problem it solves
-- What your role was
-- Tools/tech used
+PostSpin is built to save independent app creators and small businesses time fulfilling the ever growing needs of fresh content for TikTok and Instagram.
 
----
-
-## Context
-
-**Client / Project Type**: (e.g. freelance, startup, personal)
+I was the sole developer of this project. It's built using NextJS for the frontend and a series of AWS based lambda functions to handle the post processing and posting.
 <br/>
-**Goal**: What was the objective?
-**Constraints**: Timeline, budget, platform, etc.
+<br/>
+<img src="/ps1.png" alt="PostSpin" width="700" height="300" />
+<br/>
+<br/>
+### Context
 
----
+**Client / Project Type**: Freelance / Startup
+<br/>
+This project began when I began exploring ways to automate the content creation for my app Fliq. I knew that as Fliq was a consumer app, TikTok and Instagram would be great marketing channels for me.
 
-## My Role
+Whilst these channels present a great opportunity, I did not want to spend hours every day creating content.
 
-- What were you responsible for?
-- Was this a solo or team project?
+Luckily, I found a "faceless" post format that performed extremely well - creating carousels using AI of interesting and sometimes counter intuitive facts about a given niche.
 
-## Process & Approach
+Whilst I was working on this tactic for my own business, I was approached by Alex of MushroomRise to help with the social media for his business. I suggested implementing a similar tactic for him.
 
-### Discovery & Planning
-
-- How did you gather requirements?
-- Any initial research or user insights?
-
-### Design / Architecture
-
-- Diagrams, sketches, or tools used
-- Why certain design or tech decisions were made
-
+During my work with Alex to create internal tooling for him to create similar posts, he suggested that the work I was doing could do well as an independent tool. We agreed to partner, I would take care of the development, he the marketing, and PostSpin was born.
+<br/>
+<br/>
+<img src="/ps2.png" alt="PostSpin" width="700" height="300" />
+<br/>
+<br/>
 ### Implementation
 
-- Languages, frameworks, and libraries used
-- Interesting code snippets or components
-- Anything you built from scratch?
+ The PostSpin app has two core components. A frontend built using NextJS, MongoDB for the database and a microservice backend built using AWS lambda functions.
+<br/>
+#### Frontend
 
-## Challenges & Solutions
+- The PostSpin frontend is a relatively simple user app built using NextJS
+- Auth is handled using Clerk
+- Payments are handled using Stripe
+<br/>
+#### Database and Storage
 
-- What roadblocks did you hit?
-- How did you overcome them?
+- The PostSpin db is handled using MongoDB
+- User and post information is stored as MongoDB docs
+- Images are stored using AWS S3
+<br/>
+#### AWS Lambda Functions
 
-## Outcome / Results
+The core functionality of the app is built out using a series of lambda functions in a microservice architecture.This handles everything from calls to the OpenAI api for text and image generation to chron jobs for the posting of scheduled posts.
+<br/>
+I opted for this architecture for few key reasons.
 
-- Project status (shipped, in use, archived, etc.)
-- Metrics, testimonials, performance improvements
-- Link to live project or repo (if available)
+- The microservice architecture allowed me to easily create a modular image processing pipeline which is essential to the core functionality of the app.
+- Calls to AI services, particularly image generation can take time. The standard timeout limits of NextJS would not allow this.
+- The AWS EventBridge scheduler allows the function that posts scheduled posts to be triggered reliably at set intervals (currently every 5 minutes)
+<br/>
+<br/>
+<img src="/ps3.png" alt="PostSpin" width="700" height="300" />
+<br/>
+<br/>
 
-## Reflection
 
-- What would you improve next time?
-- What did you learn?
+### Challenges & Solutions
 
-## Tools & Stack
+The most challenging roadblock we faced in development of this project was gaining API access for posting to both Meta and TikTok.
+<br/>
+The Meta documentation is, at time of writing, quite confusing. There are multiple versions available online and it is not initially clear which one is correct. This was overcame with some strong coffee and much swearing.
+<br/>
+The TikTok api access process is more challenging. It takes as much as a month for the app to be initially approved. After this, a separate submission needs to be made to gain posting access. To pass this checkpoint, a video needs to be submitted with a demonstration that the app adheres to the TikTok UX guidelines. These guidelines are quite complex in their requirements. The process of submitting for a review takes about a week to return, and, unhelpfully, TikTok to not specify which requirement you have fallen foul of when a submission is rejected. This lead to a lengthy process of submitting, waiting, double-checking and resubmitting to get the app approved.
+<br/>
+### Outcome / Results
 
-`JavaScript` `React` `Node.js` `MongoDB` `Figma` `AWS S3`
+- We've just completed the v1 of this project and will be deploying to production users in the coming weeks
+<br/>
+### Reflection
 
-## Links
+My main learning from this project was the time it can take to gain access to certain APIs. Moving forward, I'm going to aim to do a better job at understanding these requirements early on as passing these gates caused significant delay in getting the app ready for production.
+<br/>
+### Tools & Stack
 
-- [Live Site](https://example.com)
-- [GitHub Repo](https://github.com/example/project)
-- [Demo Video](https://example.com/demo)
+**Frontend:** NextJS
+**Auth:** Clerk
+**DB:** MongoDB
+**Payments:** Stripe
+**Post Creation:** OpenAI API
+**Image Manipulation:** Canvas
+**Post Scheduler:** AWS EventBridge and Lambda Function
+<br/>
+### Links
+
+[PostSpin](https://postspin.ai)

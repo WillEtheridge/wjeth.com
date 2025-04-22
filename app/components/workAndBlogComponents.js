@@ -26,7 +26,7 @@ const BlogAndWorkMap = ({ data }) => {
 };
 
 const BlogDiv = ({ children }) => {
-  return <div className="w-full lg:w-2/3 ">{children}</div>;
+  return <div className="w-full lg:w-2/3 pb-24 ">{children}</div>;
 };
 
 const HeadingBlock = ({ backTo, destination, heading, subTitle, date }) => {

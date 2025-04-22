@@ -105,6 +105,19 @@ const BodyText = ({ text }) => {
   return <p className="text-cWhite text-body">{text}</p>;
 };
 
+const BodyLink = ({ children, href }) => {
+  return (
+    <a
+      href={href}
+      className="text-cWhite text-body underline"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {children}
+    </a>
+  );
+};
+
 const BoldBodyText = ({ text }) => {
   return <strong className="text-cWhite text-body font-bold">{text}</strong>;
 };
@@ -125,6 +138,7 @@ export {
   Heading6,
   Heading6Link,
   BodyText,
+  BodyLink,
   BoldBodyText,
   SmallText,
 };
