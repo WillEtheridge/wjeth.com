@@ -105,6 +105,10 @@ const BodyText = ({ text }) => {
   return <p className="text-cWhite text-body">{text}</p>;
 };
 
+const BoldBodyText = ({ text }) => {
+  return <strong className="text-cWhite text-body font-bold">{text}</strong>;
+};
+
 const SmallText = ({ text }) => {
   return <p className="text-cGreen2 text-smallBody">{text}</p>;
 };
@@ -121,5 +125,6 @@ export {
   Heading6,
   Heading6Link,
   BodyText,
+  BoldBodyText,
   SmallText,
 };
