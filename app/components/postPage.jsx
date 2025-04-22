@@ -33,9 +33,9 @@ export default async function PostPage({ contentType, slug }) {
 export async function generatePostMetadata(contentType, slug) {
   const data = getPostMetadata(contentType, slug);
   if (!data) return notFound();
-
+  const title = "wjeth - " + data.title;
   return {
-    title: data.title,
+    title: title,
     description: data.description,
     keywords: data.keywords || [],
   };
