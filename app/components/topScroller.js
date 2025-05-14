@@ -1,6 +1,6 @@
 export default function Marquee() {
   const items = [
-    "📍 Current Location: Koh Samui, Thailand 🇹🇭",
+    "📍 Current Location: Bangkok, Thailand 🇹🇭",
     "👷🏼 Working on: Automated Social Media Content Tooling, Ad Account Management",
     "📅 Availability: 🟢 Contract based development work",
     "🎶 Listening to: Tuscany - John Carroll Kirby",
