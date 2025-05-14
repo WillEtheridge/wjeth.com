@@ -19,9 +19,13 @@ const Bottom = () => {
       <div className="w-full max-w-full lg:max-w-7xl lg:w-7xl px-4 lg:px-0 flex flex-row items-center justify-between">
         <p className="text-smallBody text-cWhite">© William Etheridge 2025</p>
         <div className="flex space-x-4">
-          <BottomImage src="/neo.png" alt="Enter the Matrix" />
+          {/*
+<BottomImage src="/neo.png" alt="Enter the Matrix" />
           <BottomImage src="/blobby.webp" alt="Mr Blobby Mode" />
           <BottomImage src="/bat.png" alt="Play Pong" />
+
+
+          */}
         </div>
       </div>
     </div>

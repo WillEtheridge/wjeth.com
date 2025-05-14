@@ -14,9 +14,9 @@ keywords: ["AI", "Social Media", "Automated Content Creation"]
 ### TLDR
 
 PostSpin is a web based Saas tool that helps users create highly engaging social media carousel posts using AI.
-
+<br/>
 PostSpin is built to save independent app creators and small businesses time fulfilling the ever growing needs of fresh content for TikTok and Instagram.
-
+<br/>
 I was the sole developer of this project. It's built using NextJS for the frontend and a series of AWS based lambda functions to handle the post processing and posting.
 <br/>
 <br/>
@@ -28,13 +28,13 @@ I was the sole developer of this project. It's built using NextJS for the fronte
 **Client / Project Type**: Freelance / Startup
 <br/>
 This project began when I began exploring ways to automate the content creation for my app Fliq. I knew that as Fliq was a consumer app, TikTok and Instagram would be great marketing channels for me.
-
+<br/>
 Whilst these channels present a great opportunity, I did not want to spend hours every day creating content.
-
+<br/>
 Luckily, I found a "faceless" post format that performed extremely well - creating carousels using AI of interesting and sometimes counter intuitive facts about a given niche.
-
+<br/>
 Whilst I was working on this tactic for my own business, I was approached by Alex of MushroomRise to help with the social media for his business. I suggested implementing a similar tactic for him.
-
+<br/>
 During my work with Alex to create internal tooling for him to create similar posts, he suggested that the work I was doing could do well as an independent tool. We agreed to partner, I would take care of the development, he the marketing, and PostSpin was born.
 <br/>
 <br/>
@@ -62,7 +62,7 @@ During my work with Alex to create internal tooling for him to create similar po
 The core functionality of the app is built out using a series of lambda functions in a microservice architecture.This handles everything from calls to the OpenAI api for text and image generation to chron jobs for the posting of scheduled posts.
 <br/>
 I opted for this architecture for few key reasons.
-
+<br/>
 - The microservice architecture allowed me to easily create a modular image processing pipeline which is essential to the core functionality of the app.
 - Calls to AI services, particularly image generation can take time. The standard timeout limits of NextJS would not allow this.
 - The AWS EventBridge scheduler allows the function that posts scheduled posts to be triggered reliably at set intervals (currently every 5 minutes)
@@ -79,7 +79,11 @@ The most challenging roadblock we faced in development of this project was gaini
 <br/>
 The Meta documentation is, at time of writing, quite confusing. There are multiple versions available online and it is not initially clear which one is correct. This was overcame with some strong coffee and much swearing.
 <br/>
-The TikTok api access process is more challenging. It takes as much as a month for the app to be initially approved. After this, a separate submission needs to be made to gain posting access. To pass this checkpoint, a video needs to be submitted with a demonstration that the app adheres to the TikTok UX guidelines. These guidelines are quite complex in their requirements. The process of submitting for a review takes about a week to return, and, unhelpfully, TikTok to not specify which requirement you have fallen foul of when a submission is rejected. This lead to a lengthy process of submitting, waiting, double-checking and resubmitting to get the app approved.
+The TikTok api access process is more challenging. It takes as much as a month for the app to be initially approved.
+<br/>
+After this, a separate submission needs to be made to gain posting access. To pass this checkpoint, a video needs to be submitted with a demonstration that the app adheres to the TikTok UX guidelines. These guidelines are quite complex in their requirements.
+<br/>
+The process of submitting for a review takes about a week to return, and, unhelpfully, TikTok to not specify which requirement you have fallen foul of when a submission is rejected. This lead to a lengthy process of submitting, waiting, double-checking and resubmitting to get the app approved.
 <br/>
 ### Outcome / Results
 
@@ -92,11 +96,17 @@ My main learning from this project was the time it can take to gain access to ce
 ### Tools & Stack
 
 **Frontend:** NextJS
+<br/>
 **Auth:** Clerk
+<br/>
 **DB:** MongoDB
+<br/>
 **Payments:** Stripe
+<br/>
 **Post Creation:** OpenAI API
+<br/>
 **Image Manipulation:** Canvas
+<br/>
 **Post Scheduler:** AWS EventBridge and Lambda Function
 <br/>
 ### Links
