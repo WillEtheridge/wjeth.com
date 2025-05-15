@@ -13,7 +13,9 @@ export default function Home() {
       </div>
       <div className="mt-8 ">
         <Heading2Link text="Work" destination="/work" />
-        <Heading2Link text="Blog" destination="/blog" />
+        {/*
+<Heading2Link text="Blog" destination="/blog" />
+        */}
         <Heading2Link text="About" destination="/about" />
         <Heading2Link text="Contact" destination="/contact" />
       </div>
