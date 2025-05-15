@@ -23,7 +23,7 @@ export default function Marquee() {
     <div className="overflow-hidden w-full bg-cBg2 py-1 text-cWhite border-b border-cLine text-smallBody whitespace-nowrap">
       <div
         className="inline-flex animate-[marquee_var(--marquee-duration)_linear_infinite]"
-        style={{ "--marquee-duration": "110s" }}
+        style={{ "--marquee-duration": "130s" }}
       >
         {repeatedItems.map((item, i) => (
           <span key={i} className="mx-16 whitespace-nowrap">
